@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // Object literal notation
+        var obj = {
+            name: 'Jyotika',
+            id: 312
+        };
+
+        function Person(_name){
+            this.name = _name;
+        }
+
+        Person.prototype.id = 100;
+
+        var arr_names = ['Sindura', 'Sunita'];
+        var arr_objs = [];
+
+        for (var i = 0; i < arr_names.length; i++) {
+            arr_objs[i] = new Person(arr_names[i]);
+        }
+
+        console.log(arr_objs);
+
+        Person.prototype.id = 200;
+        console.log(arr_objs);
+
+
+        var p = new Person('Sunita');
+        console.log(p);
+        console.log(p.name);
+
+        var obj2 = Object.create(obj);
+
+        var x = 'name';
+
+        console.log(obj2.id); // Property query using the . operator
+        console.log(obj2[x]); // Associative array notation
+        console.log(obj2.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

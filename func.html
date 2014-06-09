@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        var p = {
+            proto: {
+            }
+        };
+
+        function Person(){
+
+        }
+
+
+
+        Person.call({});
+
+        alert(Object.getPrototypeOf(Person));
+
+        var x = new Person();
+
+        // js creates a new object
+        // passes it to the function using a reference "this"
+        // points the new objects prototype attribute to function's prototype property
+
+        console.log(p.proto.name);
+
+
+        var obj = new Object(); // inherit properties from <function name>.prototype
+        // In this case it is Object.prototype
+
+        console.log(obj.toString());
+
+        function Test(){
+
+        }
+
+        Test.asdf = 'somename';
+        Test.somefn = function (x, y){
+            return x + y;
+        };
+        Test.prototype.somefn = function(x, y){
+            console.log(x - y);
+        };
+
+        var t = new Test();
+        console.log(t.somefn(100,10));
+        console.log(Test.asdf);
+        console.log(Test.somefn(1,2));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
